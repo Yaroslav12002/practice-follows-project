@@ -3,14 +3,27 @@ import { NavLink } from 'react-router-dom';
 
 export const MenuLink = styled(NavLink)`
   display: 'inline-block';
-  text-decoration: none;
-  padding: 12;
+  padding: 12px;
   font-weight: 700;
-  color: #2a363b;
+  color: #fff;
   &.active {
-    color: #e84a5f;
+    border-bottom: 3px solid #fff;
   }
-  &:not(last-child) {
-    margin-right: 20px;
-  }
+`;
+
+export const LogoLink = styled.a`
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  background-color: #231a65;
+`;
+
+export const MenuList = styled.ul`
+  display: flex;
 `;

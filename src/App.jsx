@@ -1,12 +1,12 @@
-import { Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 
-import "./App.css";
-import Container from "./components/Container/Container";
-import Navigation from "./components/Navigation";
+import './App.css';
+import Container from './components/Container/Container';
+import Navigation from './components/Navigation';
 
-const HomePage = lazy(() => import("./pages/HomePage"));
-const Tweets = lazy(() => import("./pages/Tweets"));
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const Tweets = lazy(() => import('./pages/Tweets'));
 
 function App() {
   return (

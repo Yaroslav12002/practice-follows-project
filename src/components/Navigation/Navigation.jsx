@@ -1,10 +1,21 @@
-import { MenuLink } from "./Navigation.styled";
+import { Nav, MenuLink, LogoLink, MenuList } from './Navigation.styled';
+import PageLogo from '../PageLogo';
+
 function Navigation() {
   return (
-    <nav>
-      <MenuLink to="/">Main</MenuLink>
-      <MenuLink to="/tweets">Tweets</MenuLink>
-    </nav>
+    <Nav>
+      <LogoLink href="/">
+        <PageLogo />
+      </LogoLink>
+      <MenuList>
+        <li>
+          <MenuLink to="/">Main</MenuLink>
+        </li>
+        <li>
+          <MenuLink to="/tweets">Tweets</MenuLink>
+        </li>
+      </MenuList>
+    </Nav>
   );
 }
 
