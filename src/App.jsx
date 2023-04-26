@@ -15,7 +15,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<SharedLayout />}>
       <Route index element={<HomePage />} />
-      <Route path="tweets" element={<Tweets />} />
+      <Route path="/tweets" element={<Tweets />} />
       <Route path="*" element={<HomePage />} />
     </Route>
   )
