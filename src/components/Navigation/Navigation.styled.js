@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 export const MenuLink = styled(NavLink)`
   display: 'inline-block';
@@ -11,7 +11,7 @@ export const MenuLink = styled(NavLink)`
   }
 `;
 
-export const LogoLink = styled.a`
+export const LogoLink = styled(Link)`
   text-decoration: none;
   display: flex;
   align-items: center;

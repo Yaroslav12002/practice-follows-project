@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { MainPage } from './HomePage.styled';
 
 const HomeView = () => {
@@ -5,7 +6,7 @@ const HomeView = () => {
     <MainPage>
       Wellcome to Follows social network!
       <div>
-        <a href="/tweets">Let&apos;s tweet</a>
+        <Link to="/tweets">Let&apos;s tweet</Link>
       </div>
     </MainPage>
   );

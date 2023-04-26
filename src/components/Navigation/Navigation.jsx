@@ -4,7 +4,7 @@ import PageLogo from '../PageLogo';
 function Navigation() {
   return (
     <Nav>
-      <LogoLink href="/">
+      <LogoLink to="/">
         <PageLogo />
       </LogoLink>
       <MenuList>

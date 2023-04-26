@@ -7,6 +7,7 @@ export const AvatarWrapper = styled.div`
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 26px;
   width: 80px;
   height: 80px;
   background-color: #5736a3;

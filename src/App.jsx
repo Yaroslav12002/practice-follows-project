@@ -6,7 +6,7 @@ import Container from './components/Container/Container';
 import Navigation from './components/Navigation';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
-const Tweets = lazy(() => import('./pages/Tweets'));
+const Tweets = lazy(() => import('./pages/Tweets/Tweets'));
 
 function App() {
   return (

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Followers } from './FollowersLabel.styled';
 
 const FollowersLabel = ({ followers }) => {
-  return <Followers> {followers} followers</Followers>;
+  return <Followers> {followers.toLocaleString('en-us')} followers</Followers>;
 };
 
 FollowersLabel.propTypes = {

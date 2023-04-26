@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Tweets } from './TweetsLabel.styled';
 
 const TweetsLabel = ({ tweets }) => {
-  return <Tweets> {tweets} tweets</Tweets>;
+  return <Tweets> {tweets.toLocaleString('en-us')} tweets</Tweets>;
 };
 
 TweetsLabel.propTypes = {
