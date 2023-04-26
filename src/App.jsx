@@ -1,8 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { GlobalStyles } from './GlobalStyles';
-import Container from './components/Container/Container';
-import Navigation from './components/Navigation';
+import SharedLayout from './components/SharedLayout';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const Tweets = lazy(() => import('./pages/Tweets/Tweets'));
@@ -11,16 +10,13 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Container>
-        <Navigation />
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/tweets" element={<Tweets />} />
-            <Route path="*" element={<HomePage />} />
-          </Routes>
-        </Suspense>
-      </Container>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/tweets" element={<Tweets />} />
+          <Route path="*" element={<HomePage />} />
+        </Route>
+      </Routes>
     </>
   );
 }
