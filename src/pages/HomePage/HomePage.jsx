@@ -1,6 +1,6 @@
 import { MainPage, Logo, StyledLink, Hero } from './HomePage.styled';
 
-const HomeView = () => {
+const HomePage = () => {
   return (
     <MainPage>
       <Hero>
@@ -13,4 +13,4 @@ const HomeView = () => {
   );
 };
 
-export default HomeView;
+export default HomePage;
