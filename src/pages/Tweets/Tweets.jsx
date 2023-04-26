@@ -38,7 +38,6 @@ const Tweets = () => {
   const handlePageIncrease = () => {
     setPage(page + 1);
   };
-
   return (
     <TweetsWrapper>
       <GoBack to={backLinkHref}>Go back</GoBack>

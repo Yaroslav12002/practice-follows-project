@@ -1,21 +1,38 @@
 import PropTypes from 'prop-types';
-// import { useState } from 'react';
+import { useState } from 'react';
 import UserCard from '../UserCard';
 import { List } from './UserList.styled';
 
-// func;
-
 const UserList = ({ users }) => {
-  // const [followedUsers, setFollowedUsers] = useState(
-  //   JSON.parse(localStorage.getItem('followed')) || []
-  // );
+  const [followedUsers, setFollowedUsers] = useState(
+    JSON.parse(localStorage.getItem('followed')) || []
+  );
+
+  const isFollowed = id => {
+    return followedUsers.includes(id);
+  };
+
+  const handleChangeFollowed = id => {
+    if (isFollowed(id)) {
+      const newFollowedUsers = followedUsers.filter(
+        followedUser => followedUser.id === id
+      );
+      setFollowedUsers([...newFollowedUsers]);
+      return;
+    }
+    setFollowedUsers([...followedUsers, id]);
+  };
 
   return (
     <List>
       {users.map(user => {
         return (
-          // <UserCard key={user.id} user={user} followed={isFollowed(user.id)} />
-          <UserCard key={user.id} user={user} />
+          <UserCard
+            key={user.id}
+            user={user}
+            isFollowed={isFollowed(user.id)}
+            changeFollowed={handleChangeFollowed}
+          />
         );
       })}
     </List>
