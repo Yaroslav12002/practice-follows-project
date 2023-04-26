@@ -37,7 +37,6 @@ const Tweets = () => {
 
   const handlePageIncrease = () => {
     setPage(page + 1);
-    console.log('users=', users);
   };
 
   return (

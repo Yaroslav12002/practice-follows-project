@@ -1,12 +1,13 @@
-import { Link } from 'react-router-dom';
-import { MainPage } from './HomePage.styled';
+import { MainPage, Logo, StyledLink, Hero } from './HomePage.styled';
 
 const HomeView = () => {
   return (
     <MainPage>
-      Wellcome to Follows social network!
+      <Hero>
+        Wellcome to <Logo>Follows</Logo> social network!
+      </Hero>
       <div>
-        <Link to="/tweets">Let&apos;s tweet</Link>
+        <StyledLink to="/tweets">Let&apos;s tweet</StyledLink>
       </div>
     </MainPage>
   );

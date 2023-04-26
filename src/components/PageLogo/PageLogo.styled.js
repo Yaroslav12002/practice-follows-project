@@ -6,5 +6,7 @@ export const LogoImg = styled.img`
 `;
 
 export const LogoTitle = styled.p`
+  font-family: 'Saira';
+  font-size: 24px;
   color: #fff;
 `;

@@ -21,6 +21,7 @@ export const LogoLink = styled(Link)`
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
+  gap: 10px;
   background-color: #231a65;
 `;
 
