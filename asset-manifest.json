@@ -1,12 +1,18 @@
 {
   "files": {
-    "main.js": "/practice-follows-project/static/js/main.fbd819ad.js",
+    "main.js": "/practice-follows-project/static/js/main.9b48fcd4.js",
+    "static/js/156.8bd2e5a2.chunk.js": "/practice-follows-project/static/js/156.8bd2e5a2.chunk.js",
+    "static/js/79.9dfee928.chunk.js": "/practice-follows-project/static/js/79.9dfee928.chunk.js",
+    "static/js/856.14b1b5ef.chunk.js": "/practice-follows-project/static/js/856.14b1b5ef.chunk.js",
     "static/media/SairaStencilOne-Regular.ttf": "/practice-follows-project/static/media/SairaStencilOne-Regular.c46f8f7f28fe894cbc39.ttf",
     "static/media/logo.png": "/practice-follows-project/static/media/logo.4e1b2444565c089672e0.png",
     "index.html": "/practice-follows-project/index.html",
-    "main.fbd819ad.js.map": "/practice-follows-project/static/js/main.fbd819ad.js.map"
+    "main.9b48fcd4.js.map": "/practice-follows-project/static/js/main.9b48fcd4.js.map",
+    "156.8bd2e5a2.chunk.js.map": "/practice-follows-project/static/js/156.8bd2e5a2.chunk.js.map",
+    "79.9dfee928.chunk.js.map": "/practice-follows-project/static/js/79.9dfee928.chunk.js.map",
+    "856.14b1b5ef.chunk.js.map": "/practice-follows-project/static/js/856.14b1b5ef.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.fbd819ad.js"
+    "static/js/main.9b48fcd4.js"
   ]
 }
