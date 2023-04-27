@@ -5,7 +5,7 @@ import { List } from './UserList.styled';
 
 const LOCALSTORAGE_KEY = 'followed';
 
-const UserList = ({ users }) => {
+const UserList = ({ users, userFollowersIncrease, userFollowersDecrease }) => {
   const [followedUsers, setFollowedUsers] = useState(
     JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || []
   );
@@ -20,10 +20,11 @@ const UserList = ({ users }) => {
       newFollowedUsers = followedUsers.filter(
         followedUser => followedUser !== id
       );
+      userFollowersDecrease(id);
     } else {
       newFollowedUsers = [...followedUsers, id];
+      userFollowersIncrease(id);
     }
-
     setFollowedUsers([...newFollowedUsers]);
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(newFollowedUsers));
   };
@@ -46,6 +47,8 @@ const UserList = ({ users }) => {
 
 UserList.propTypes = {
   users: PropTypes.arrayOf(PropTypes.exact),
+  userFollowersIncrease: PropTypes.func,
+  userFollowersDecrease: PropTypes.func,
 };
 
 export default UserList;

@@ -16,6 +16,29 @@ const Tweets = () => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
+  const handlePageIncrease = () => {
+    setPage(page + 1);
+  };
+
+  const userFollowersChange = (id, payload) => {
+    const newUsers = users.map(user => {
+      if (user.id === id) {
+        return { ...user, followers: user.followers + payload };
+      } else {
+        return user;
+      }
+    });
+    setUsers(newUsers);
+  };
+
+  const userFollowersIncrease = id => {
+    userFollowersChange(id, 1);
+  };
+
+  const userFollowersDecrease = id => {
+    userFollowersChange(id, -1);
+  };
+
   useEffect(() => {
     const loadUsers = async () => {
       setIsLoading(true);
@@ -35,13 +58,14 @@ const Tweets = () => {
     loadUsers();
   }, [page]);
 
-  const handlePageIncrease = () => {
-    setPage(page + 1);
-  };
   return (
     <TweetsWrapper>
       <GoBack to={backLinkHref}>Go back</GoBack>
-      <UsersList users={users} />
+      <UsersList
+        users={users}
+        userFollowersIncrease={userFollowersIncrease}
+        userFollowersDecrease={userFollowersDecrease}
+      />
       {!isLastPage && (
         <LoadMoreButton loadMore={handlePageIncrease} isLoading={isLoading} />
       )}
