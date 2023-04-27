@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import GoBack from '../../components/GoBack';
 import UsersList from '../../components/UsersList';
 import LoadMoreButton from '../../components/LoadMoreButton';
-import { getUsers } from '../../services/tweetsAPI';
+import { getUsers, setUser } from '../../services/tweetsAPI';
 import { TweetsWrapper } from './Tweets.styled';
 
 const Tweets = () => {
@@ -21,13 +21,18 @@ const Tweets = () => {
   };
 
   const userFollowersChange = (id, payload) => {
+    let changedUser = null;
     const newUsers = users.map(user => {
       if (user.id === id) {
-        return { ...user, followers: user.followers + payload };
+        changedUser = { ...user, followers: user.followers + payload };
+        return { ...changedUser };
       } else {
         return user;
       }
     });
+    if (changedUser) {
+      setUser(changedUser);
+    }
     setUsers(newUsers);
   };
 
