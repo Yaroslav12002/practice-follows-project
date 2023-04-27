@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import GoBack from '../../components/GoBack';
 import UsersList from '../../components/UsersList';
 import LoadMoreButton from '../../components/LoadMoreButton';
+import Filter from '../../components/Filter';
 import { getUsers, setUser } from '../../services/tweetsAPI';
 import { TweetsWrapper } from './Tweets.styled';
 
@@ -13,6 +14,9 @@ const Tweets = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [isLastPage, setIsLastPage] = useState(false);
+  const [filter, setFilter] = useState('all');
+  const [isFiltering, setIsFiltering] = useState(false);
+  const [previousFetchedPage, setPreviousFetchedPage] = useState(0);
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
@@ -44,35 +48,54 @@ const Tweets = () => {
     userFollowersChange(id, -1);
   };
 
+  const filterChanged = e => {
+    const newFilter = e.target.value;
+    setFilter(newFilter);
+    if (newFilter === 'all') {
+      setIsFiltering(false);
+    } else {
+      setIsFiltering(true);
+    }
+  };
+
   useEffect(() => {
     const loadUsers = async () => {
-      setIsLoading(true);
-      const responseData = await getUsers(page);
-      if (page === 1) {
-        setUsers([...responseData]);
-      } else {
-        setUsers(prev => [...prev, ...responseData]);
-      }
-      setIsLoading(false);
-      if (responseData.length < 3) {
-        setIsLastPage(true);
-        Notify.success('No more users');
+      if (previousFetchedPage !== page) {
+        setIsLoading(true);
+        setPreviousFetchedPage(page);
+        const responseData = await getUsers(page);
+        if (page === 1) {
+          setUsers([...responseData]);
+        } else {
+          setUsers(prev => [...prev, ...responseData]);
+        }
+        setIsLoading(false);
+        if (responseData.length < 3) {
+          setIsLastPage(true);
+          Notify.success('No more users');
+        }
       }
     };
 
     loadUsers();
-  }, [page]);
+  }, [page, filter, previousFetchedPage]);
 
   return (
     <TweetsWrapper>
       <GoBack to={backLinkHref}>Go back</GoBack>
+      <Filter handleChange={filterChanged} />
       <UsersList
         users={users}
+        filter={filter}
         userFollowersIncrease={userFollowersIncrease}
         userFollowersDecrease={userFollowersDecrease}
       />
       {!isLastPage && (
-        <LoadMoreButton loadMore={handlePageIncrease} isLoading={isLoading} />
+        <LoadMoreButton
+          loadMore={handlePageIncrease}
+          isLoading={isLoading}
+          isFiltering={isFiltering}
+        />
       )}
     </TweetsWrapper>
   );

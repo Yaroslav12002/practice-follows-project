@@ -5,7 +5,12 @@ import { List } from './UserList.styled';
 
 const LOCALSTORAGE_KEY = 'followed';
 
-const UserList = ({ users, userFollowersIncrease, userFollowersDecrease }) => {
+const UserList = ({
+  users,
+  filter,
+  userFollowersIncrease,
+  userFollowersDecrease,
+}) => {
   const [followedUsers, setFollowedUsers] = useState(
     JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || []
   );
@@ -15,7 +20,7 @@ const UserList = ({ users, userFollowersIncrease, userFollowersDecrease }) => {
   };
 
   const handleChangeFollowed = id => {
-    let newFollowedUsers = [];
+    let newFollowedUsers = {};
     if (isFollowed(id)) {
       newFollowedUsers = followedUsers.filter(
         followedUser => followedUser !== id
@@ -29,9 +34,30 @@ const UserList = ({ users, userFollowersIncrease, userFollowersDecrease }) => {
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(newFollowedUsers));
   };
 
+  const visibleUsers = (allUsers, currentFilter) => {
+    let filteredList = [];
+    switch (currentFilter) {
+      case 'all':
+        return users;
+
+      case 'follow':
+        filteredList = allUsers.filter(
+          user => !followedUsers.includes(user.id)
+        );
+        return filteredList;
+
+      case 'followings':
+        filteredList = allUsers.filter(user => followedUsers.includes(user.id));
+        return filteredList;
+
+      default:
+        return users;
+    }
+  };
+
   return (
     <List>
-      {users.map(user => {
+      {visibleUsers(users, filter).map(user => {
         return (
           <UserCard
             key={user.id}
@@ -47,6 +73,7 @@ const UserList = ({ users, userFollowersIncrease, userFollowersDecrease }) => {
 
 UserList.propTypes = {
   users: PropTypes.arrayOf(PropTypes.exact),
+  filter: PropTypes.string.isRequired,
   userFollowersIncrease: PropTypes.func,
   userFollowersDecrease: PropTypes.func,
 };
