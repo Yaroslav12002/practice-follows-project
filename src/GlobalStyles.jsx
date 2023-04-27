@@ -32,7 +32,6 @@ export const GlobalStyles = createGlobalStyle`
       min-width: 320px;
   position: relative;
   margin: 0;
-  /* font-family: "MontserratMedium", sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
