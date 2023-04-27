@@ -24,7 +24,7 @@ export const AvatarWrapper = styled.div`
   }
 `;
 
-export const ElipseImage = styled.img`
+export const EllipseImage = styled.img`
   position: absolute;
   top: 0;
   left: 0;
@@ -33,6 +33,6 @@ export const ElipseImage = styled.img`
   background-color: #5736a3;
 `;
 
-export const AvatarImage = styled.img`
+export const AvatarPicture = styled.picture`
   z-index: 10;
 `;

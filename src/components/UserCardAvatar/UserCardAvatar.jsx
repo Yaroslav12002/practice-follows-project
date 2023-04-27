@@ -1,23 +1,31 @@
 import PropTypes from 'prop-types';
 import {
   AvatarWrapper,
-  AvatarImage,
-  ElipseImage,
+  AvatarPicture,
+  EllipseImage,
 } from './UserCardAvatar.styled';
 import placeholder from '../../images/Card/card-avatar-placeholder.png';
+import placeholder2x from '../../images/Card/card-avatar-placeholder@2x.png';
 import ellipse from '../../images/Card/ellipse.png';
+import ellipse2x from '../../images/Card/ellipse@2x.png';
 
 const UserCardAvatar = ({ avatar, user }) => {
   return (
     <AvatarWrapper>
-      <AvatarImage
-        src={placeholder}
-        alt={user}
-        width="62"
-        height="62"
-        onError={e => (e.currentTarget.src = { avatar })}
-      />
-      <ElipseImage src={ellipse} width="80" height="80" />
+      <AvatarPicture>
+        <source srcSet={`${placeholder} 1x,${placeholder2x} 2x`} />
+        <img
+          src={placeholder}
+          alt={user}
+          width="62"
+          height="62"
+          onError={e => (e.currentTarget.src = { avatar })}
+        />
+      </AvatarPicture>
+      <picture>
+        <source srcSet={`${ellipse} 1x,${ellipse2x} 2x`} />
+        <EllipseImage src={ellipse} alt="ellipse" width="80" height="80" />
+      </picture>
     </AvatarWrapper>
   );
 };

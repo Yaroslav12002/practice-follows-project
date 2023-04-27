@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import backgroundMain from '../../images/Card/card-background.png';
+import backgroundMain2x from '../../images/Card/card-background@2x.png';
 import backgroundLogo from '../../images/Card/card-logo.png';
+import backgroundLogo2x from '../../images/Card/card-logo@2x.png';
 
 export const UserCardContainer = styled.div`
   position: relative;
@@ -10,6 +12,12 @@ export const UserCardContainer = styled.div`
   height: 460px;
   background-image: url(${backgroundLogo}), url(${backgroundMain}),
     linear-gradient(114.99deg, #471ca9 -0.99%, #5736a3 54.28%, #4b2a99 78.99%);
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(${backgroundLogo2x}), url(${backgroundMain2x}),
+      linear-gradient(114.99deg, #471ca9 -0.99%, #5736a3 54.28%, #4b2a99 78.99%);
+  }
   background-repeat: no-repeat;
   background-size: 76px 22px, 308px 168px, contain;
   background-position: 20px 20px, 36px 28px, 0px 0px;
