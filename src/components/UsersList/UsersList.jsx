@@ -15,7 +15,7 @@ const UserList = ({ users }) => {
   const handleChangeFollowed = id => {
     if (isFollowed(id)) {
       const newFollowedUsers = followedUsers.filter(
-        followedUser => followedUser.id === id
+        followedUser => followedUser !== id
       );
       setFollowedUsers([...newFollowedUsers]);
       return;
