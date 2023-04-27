@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/practice-follows-project/static/js/main.fbd819ad.js",
+    "static/media/SairaStencilOne-Regular.ttf": "/practice-follows-project/static/media/SairaStencilOne-Regular.c46f8f7f28fe894cbc39.ttf",
+    "static/media/logo.png": "/practice-follows-project/static/media/logo.4e1b2444565c089672e0.png",
+    "index.html": "/practice-follows-project/index.html",
+    "main.fbd819ad.js.map": "/practice-follows-project/static/js/main.fbd819ad.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.fbd819ad.js"
+  ]
+}
