@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/practice-follows-project/static/js/main.530a6f58.js",
+    "main.js": "/practice-follows-project/static/js/main.ec95851c.js",
     "static/js/156.8bd2e5a2.chunk.js": "/practice-follows-project/static/js/156.8bd2e5a2.chunk.js",
-    "static/js/92.0d8fb8c1.chunk.js": "/practice-follows-project/static/js/92.0d8fb8c1.chunk.js",
+    "static/js/563.369d0b81.chunk.js": "/practice-follows-project/static/js/563.369d0b81.chunk.js",
     "static/js/856.14b1b5ef.chunk.js": "/practice-follows-project/static/js/856.14b1b5ef.chunk.js",
+    "static/media/Montserrat-Medium.ttf": "/practice-follows-project/static/media/Montserrat-Medium.a281f04d4c8926e7dea1.ttf",
     "static/media/SairaStencilOne-Regular.ttf": "/practice-follows-project/static/media/SairaStencilOne-Regular.c46f8f7f28fe894cbc39.ttf",
-    "static/media/ellipse@2x.png": "/practice-follows-project/static/media/ellipse@2x.2de2642c85a673953efd.png",
     "static/media/card-background@2x.png": "/practice-follows-project/static/media/card-background@2x.00f6ff7aba348928b114.png",
     "static/media/logo.png": "/practice-follows-project/static/media/logo.4e1b2444565c089672e0.png",
     "index.html": "/practice-follows-project/index.html",
-    "main.530a6f58.js.map": "/practice-follows-project/static/js/main.530a6f58.js.map",
+    "main.ec95851c.js.map": "/practice-follows-project/static/js/main.ec95851c.js.map",
     "156.8bd2e5a2.chunk.js.map": "/practice-follows-project/static/js/156.8bd2e5a2.chunk.js.map",
-    "92.0d8fb8c1.chunk.js.map": "/practice-follows-project/static/js/92.0d8fb8c1.chunk.js.map",
+    "563.369d0b81.chunk.js.map": "/practice-follows-project/static/js/563.369d0b81.chunk.js.map",
     "856.14b1b5ef.chunk.js.map": "/practice-follows-project/static/js/856.14b1b5ef.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.530a6f58.js"
+    "static/js/main.ec95851c.js"
   ]
 }
