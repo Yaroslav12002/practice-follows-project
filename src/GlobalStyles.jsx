@@ -1,9 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 import logoFont from './fonts/SairaStencilOne-Regular.ttf';
+import montserrat from './fonts/Montserrat-Medium.ttf';
 
 export const GlobalStyles = createGlobalStyle`
     :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', -apple-system,
+    BlinkMacSystemFont, sans-serif;;
   line-height: 1.5;
   font-weight: 400;
 
@@ -21,14 +24,21 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 @font-face {
-        font-family: 'Saira';
-        src: local('Saira'),
-        url(${logoFont}) format('truetype');
-        font-weight: 400;
-        font-style: normal;
-    }
+  font-family: 'Saira';
+  src: local('Saira'),
+  url(${logoFont}) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'),
+  url(${montserrat}) format('truetype');
+  font-weight: 500;
+  font-style: normal;
+} 
 
-    body {
+body {
       min-width: 320px;
   position: relative;
   margin: 0;

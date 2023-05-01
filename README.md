@@ -13,6 +13,9 @@ is stored on the backend mockAPI.
 
 Main Page ![Main Page](./assets/main-page.JPG)
 
+Filter. Warning! 'Load more' button unactive if filter not equal to 'ALL'
+![Filter](./assets/filter.jpg)
+
 Users List ![Users List](./assets/users-list.jpg)
 
 User Card

@@ -1,13 +1,7 @@
 import PropTypes from 'prop-types';
-import {
-  AvatarWrapper,
-  AvatarPicture,
-  EllipseImage,
-} from './UserCardAvatar.styled';
+import { AvatarWrapper, AvatarPicture, Ellipse } from './UserCardAvatar.styled';
 import placeholder from '../../images/Card/card-avatar-placeholder.png';
 import placeholder2x from '../../images/Card/card-avatar-placeholder@2x.png';
-import ellipse from '../../images/Card/ellipse.png';
-import ellipse2x from '../../images/Card/ellipse@2x.png';
 
 const UserCardAvatar = ({ avatar, user }) => {
   return (
@@ -22,10 +16,7 @@ const UserCardAvatar = ({ avatar, user }) => {
           onError={e => (e.currentTarget.src = { avatar })}
         />
       </AvatarPicture>
-      <picture>
-        <source srcSet={`${ellipse} 1x,${ellipse2x} 2x`} />
-        <EllipseImage src={ellipse} alt="ellipse" width="80" height="80" />
-      </picture>
+      <Ellipse />
     </AvatarWrapper>
   );
 };
