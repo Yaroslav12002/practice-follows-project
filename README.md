@@ -34,5 +34,5 @@ User Card Following
 
 ```
 npm install
-npm run dev
+npm start
 ```
