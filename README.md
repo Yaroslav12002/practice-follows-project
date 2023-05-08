@@ -28,7 +28,7 @@ User Card Following
 
 ## Deploy
 
-[Link](https://practice-follows-project.vercel.app/)
+[Link](https://yaroslav12002.github.io/practice-follows-project/)
 
 ## Project setup
 
